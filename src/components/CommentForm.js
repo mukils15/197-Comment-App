@@ -29,7 +29,7 @@ export const CommentForm = (props) => {
         }
         return (
             <div>
-                    <Comment comment={commentSend} depth = {1} maxDepth = {postSubmit.depth} highDepth = {props.highDepth + 1}/>
+                    <Comment comment={commentSend} depth = {1} maxDepth = {postSubmit.depth} highDepth = {props.highDepth}/>
             </div>
         )
     }

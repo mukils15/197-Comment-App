@@ -9,19 +9,34 @@ export default function Comment(props) {
         return null;
     } 
 
-    const [highDepth, setShow] = useState(props.highDepth);
+    const [highDepth, setHigh] = useState(props.highDepth);
     const [depth, setDepth] = useState(props.depth)
     const [nextLevel, setNext] = useState(props.nextLevel);
+    
+    const [commList, setList] = useState([])
 
     const reply = () => {
-        if (highDepth > 0 && highDepth <= 5 ){
-            setShow(highDepth+1);
-            setDepth(depth+1);
-            setNext(1);
+        if (highDepth > 0 && highDepth < 3){   
+            if (nextLevel > 0){
+                console.log('ok');
+                console.log(highDepth);
+                setDepth(depth);
+                setList(commList.concat(<div style={{margin: 25}}>
+                    <CommentForm post = {true} depth = {depth-1} highDepth = {highDepth+1}/>
+            </div>));
+            } else if (nextLevel === undefined){
+                console.log('okdw');
+                console.log(highDepth);
+                setNext(1);
+                setDepth(depth+1);
+            }
         } else if (highDepth === 0 || highDepth === undefined){
+            console.log('okdwwddw');
+            console.log(highDepth);
             setDepth(depth+1);
             setNext(1);
-            setShow(1);
+            setHigh(1);
+            setNext(1);
         }   
     }
 
@@ -37,6 +52,7 @@ export default function Comment(props) {
               </br>
               <div className = "ok" style={{margin: 25}}>
                     {<Comment depth = {depth-1} nextLevel= {0} highDepth = {highDepth}/>}
+                    {commList}
               </div>
               <button onClick={reply}>
                   Reply
