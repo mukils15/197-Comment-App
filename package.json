@@ -1,0 +1,27 @@
+{
+  "name": "197-Comment-App",
+  "version": "1.0.0",
+  "description": "Comment app for 197 HW #4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukils15/197-Comment-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukils15/197-Comment-App/issues"
+  },
+  "homepage": "https://github.com/mukils15/197-Comment-App#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "style.css": "^1.0.0"
+  }
+}
